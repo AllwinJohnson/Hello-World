@@ -62,7 +62,42 @@
 
 
 # tuples (immutable, not changeable)
-numbers = (1, 2, 3, 3, 4, 5)
+# numbers = (1, 2, 3, 3, 4, 5)
+#
+# print(numbers.count(3))  # count of 3
+# print(numbers.index(3))  # index
 
-print(numbers.count(3))  # count of 3
-print(numbers.index(3))  # index
+
+# car game
+
+commands = ["help", "start", "stop", "quit"]
+userInputCommand = ""
+isCarStarted = False
+isCarStopped = False
+while True:
+    userInputCommand = str(input("> ")).lower()
+    if userInputCommand == commands[0]:
+        print("""
+Start - to start the car
+Stop - to stop  the car
+Quit - exit
+        """)
+    elif userInputCommand == commands[1]:
+        if isCarStarted:
+            print("Yo, It's already running")
+        else:
+            isCarStarted = True
+            isCarStopped = False
+            print("Card started.. wroom.. wroom..")
+    elif userInputCommand == commands[2]:
+        if isCarStopped:
+            print("Yo, It's already stopped")
+        else:
+            isCarStopped = True
+            isCarStarted = False
+            print("Car stopped")
+    elif userInputCommand == commands[3]:
+        print("GAME OVER")
+        break
+    else:
+        print("Uh oh.. I don't understand the command..")
